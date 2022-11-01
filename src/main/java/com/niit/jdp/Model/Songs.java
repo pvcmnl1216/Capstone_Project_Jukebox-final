@@ -6,4 +6,7 @@
 package com.niit.jdp.Model;
 
 public class Songs {
+    private int id;
+    private String SongName;
+    private int userId;
 }
