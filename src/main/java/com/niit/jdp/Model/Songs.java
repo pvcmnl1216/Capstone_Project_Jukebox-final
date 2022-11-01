@@ -42,4 +42,13 @@ public class Songs {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "Songs{" +
+                "id=" + id +
+                ", SongName='" + SongName + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }
