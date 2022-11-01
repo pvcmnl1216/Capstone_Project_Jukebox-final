@@ -9,4 +9,13 @@ public class Songs {
     private int id;
     private String SongName;
     private int userId;
+
+    public Songs() {
+    }
+
+    public Songs(int id, String songName, int userId) {
+        this.id = id;
+        SongName = songName;
+        this.userId = userId;
+    }
 }

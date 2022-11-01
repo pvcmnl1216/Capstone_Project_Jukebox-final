@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3b25dd-fb6a-4fcd-9639-a95aa6c7e788" name="Changes" comment="" />
+    <list default="true" id="3f3b25dd-fb6a-4fcd-9639-a95aa6c7e788" name="Changes" comment="initialize the variables in the Songs.java class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/Songs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/Songs.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2GwOvSJ2bac4yQFxszycbBNuBo9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -18,8 +33,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -31,6 +49,53 @@
       <option name="presentableId" value="Default" />
       <updated>1667296410813</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1667296432616</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667296432616</updated>
+    </task>
+    <task id="LOCAL-00002" summary="maven compiler changes from 11 to 18">
+      <created>1667296460071</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667296460071</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created the Songs.java">
+      <created>1667296558547</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667296558547</updated>
+    </task>
+    <task id="LOCAL-00004" summary="initialize the variables in the Songs.java class">
+      <created>1667296691222</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667296691222</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="maven compiler changes from 11 to 18" />
+    <MESSAGE value="created the Songs.java" />
+    <MESSAGE value="initialize the variables in the Songs.java class" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialize the variables in the Songs.java class" />
   </component>
 </project>
