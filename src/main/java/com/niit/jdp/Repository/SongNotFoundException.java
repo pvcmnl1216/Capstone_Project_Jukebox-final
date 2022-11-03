@@ -5,5 +5,8 @@
  */
 package com.niit.jdp.Repository;
 
-public class SongNotFoundException {
+public class SongNotFoundException extends Exception{
+    public SongNotFoundException(String message) {
+        super(message);
+    }
 }
