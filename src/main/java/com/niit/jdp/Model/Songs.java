@@ -6,49 +6,82 @@
 package com.niit.jdp.Model;
 
 public class Songs {
-    private int id;
-    private String SongName;
-    private int userId;
+    private int songId;
+    private String songName;
+    private String artistName;
+    private String genre;
+    private String duration;
+    private String songPath;
 
     public Songs() {
     }
 
-    public Songs(int id, String songName, int userId) {
-        this.id = id;
-        SongName = songName;
-        this.userId = userId;
+    public Songs(int songId, String songName, String artistName, String genre, String duration, String songPath) {
+        this.songId = songId;
+        this.songName = songName;
+        this.artistName = artistName;
+        this.genre = genre;
+        this.duration = duration;
+        this.songPath = songPath;
     }
 
-    public int getId() {
-        return id;
+    public int getSongId() {
+        return songId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSongId(int songId) {
+        this.songId = songId;
     }
 
     public String getSongName() {
-        return SongName;
+        return songName;
     }
 
     public void setSongName(String songName) {
-        SongName = songName;
+        this.songName = songName;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getArtistName() {
+        return artistName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getSongPath() {
+        return songPath;
+    }
+
+    public void setSongPath(String songPath) {
+        this.songPath = songPath;
     }
 
     @Override
     public String toString() {
         return "Songs{" +
-                "id=" + id +
-                ", SongName='" + SongName + '\'' +
-                ", userId=" + userId +
+                "songId=" + songId +
+                ", songName='" + songName + '\'' +
+                ", artistName='" + artistName + '\'' +
+                ", genre='" + genre + '\'' +
+                ", duration='" + duration + '\'' +
+                ", songPath='" + songPath + '\'' +
                 '}';
     }
 }
