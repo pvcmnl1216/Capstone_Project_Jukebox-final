@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3b25dd-fb6a-4fcd-9639-a95aa6c7e788" name="Changes" comment="created the SongNotFoundException.java" />
+    <list default="true" id="3f3b25dd-fb6a-4fcd-9639-a95aa6c7e788" name="Changes" comment="created the songs repository" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667449765773</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="created the songs repository">
+      <created>1667450049686</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667450049686</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +150,7 @@
     <MESSAGE value="created the Playlist class" />
     <MESSAGE value="created the playlist.java" />
     <MESSAGE value="created the SongNotFoundException.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the SongNotFoundException.java" />
+    <MESSAGE value="created the songs repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="created the songs repository" />
   </component>
 </project>
