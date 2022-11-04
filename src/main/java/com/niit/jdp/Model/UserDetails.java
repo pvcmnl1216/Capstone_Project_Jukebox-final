@@ -50,7 +50,7 @@ public class UserDetails {
 
             makeConnection = new DatabaseService();
             con=makeConnection.connect();
-            String sql = "select * from userdetais ";
+            String sql = "select * from userdetails ";
             Statement statement = con.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
 
@@ -102,7 +102,7 @@ public class UserDetails {
             }
             default: {
                 try {
-                    String sql = "insert into userDetais (username,password,email,mobileNo) values (?,?,?,?)";
+                    String sql = "insert into userDetails (username,password,email,mobileNo) values (?,?,?,?)";
                     PreparedStatement preparedStatement = con.prepareStatement(sql);
                     preparedStatement.setString(1, userName);
                     preparedStatement.setString(2, password);

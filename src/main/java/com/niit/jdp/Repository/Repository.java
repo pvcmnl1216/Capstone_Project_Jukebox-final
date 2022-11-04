@@ -17,4 +17,5 @@ public interface Repository {
     List<Songs> songSearchByArtistName(List<Songs> songList, String artistName);
 
     List<Songs> songSearchByGenre(List<Songs> songList, String genre);
+
 }

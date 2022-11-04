@@ -10,6 +10,7 @@ import com.niit.jdp.Repository.SongNotFoundException;
 import com.niit.jdp.Repository.SongRepository;
 import com.niit.jdp.Service.DatabaseService;
 import com.niit.jdp.Service.MusicPlayerService;
+import com.niit.jdp.Service.SongsService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -21,6 +22,7 @@ public class Main {
 
         UserDetails user=new UserDetails();
         user.userDisplay();
+        System.out.println("----------------------------------------------");
         //creating scanner object for take input from user
         Scanner scanner = new Scanner(System.in);
         // creating object of song repository class for call method
@@ -31,6 +33,8 @@ public class Main {
         MusicPlayerService musicPlayerService = new MusicPlayerService();
         //display method return value store this object
         List<Songs> displayAllSong = songRepository.displayAllSong();
+        System.out.println("Welcome to the Jukebox");
+        System.out.println();
         songRepository.displayFormat(displayAllSong);
         System.out.println();
         System.out.println("----------------------------------------------");

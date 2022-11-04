@@ -4,32 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3b25dd-fb6a-4fcd-9639-a95aa6c7e788" name="Changes" comment="created the DatabaseService.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/ExistingUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/UserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Service/MusicPlayerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Service/SongsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/01 - lovely.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Camila Cabello &amp; Shawn Mendes - Señorita.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Ed Sheeran &amp; Justin Bieber - I Dont Care.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Ed Sheeran - Afire Love.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Imagine Dragons - Believer (Audio).wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Justin Bieber - Love Yourself.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Maroon 5 - Memories.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Maroon_5_-_Girls_Like_You_ft_Cardi_B_Official_Music_Video.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/The Weeknd - Blinding Lights.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Songs/Tones and I - Dance Monkey.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e972e9c43469b67c52d4ebb1ef4baf6e570e05a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="3f3b25dd-fb6a-4fcd-9639-a95aa6c7e788" name="Changes" comment="Final commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/Songs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/Songs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/ExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/ExistingUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Model/UserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Repository/PlaylistRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Repository/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Repository/SongRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Service/DatabaseService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667450134153</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Final commit">
+      <created>1667558493787</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558493787</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +208,7 @@
     <MESSAGE value="created the SongNotFoundException.java" />
     <MESSAGE value="created the songs repository" />
     <MESSAGE value="created the DatabaseService.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the DatabaseService.java" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
   </component>
 </project>

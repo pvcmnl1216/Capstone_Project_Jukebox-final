@@ -35,8 +35,8 @@ public class PlaylistRepository {
     public List<Playlist> ShowPlayList() throws SQLException, PlaylistNotFoundException {
         String playList = "";
         int count = 0;
-        List<Playlist> playListsName;
-        playListsName = new ArrayList<>();
+        List<Playlist> playlistName;
+        playlistName = new ArrayList<>();
         Connection getConnection = databaseService.connect();
         String query = "Select * from playlist;";
         Statement statement = getConnection.createStatement();
@@ -44,25 +44,25 @@ public class PlaylistRepository {
         while (resultSet.next()) {
             playList = resultSet.getString(1);
             count++;
-            playListsName.add(new Playlist(playList, count));
-            if (playListsName == null) {
+            playlistName.add(new Playlist(playList, count));
+            if (playlistName == null) {
                 throw new PlaylistNotFoundException("Playlist is empty");
             }
         }
-        return playListsName;
+        return playlistName;
     }
 
     public List<Songs> getSongFromList(int playListId, List<Songs> songList) {
         List<Songs> getSong = new ArrayList<>();
         Connection getConnection = databaseService.connect();
-        String query = "Select * from playlist where playList_Id = " + playListId;
+        String query = "Select * from playlist1 where playlist_Id = " + playListId;
 
         try {
             PreparedStatement preparedStatement = getConnection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int playListIdFromTable = resultSet.getInt(1);
-                int songId = resultSet.getInt(3);
+                int songId = resultSet.getInt(2);
                 for (Songs song : songList) {
                     if (songId == song.getSongId()) {
                         getSong.add(song);
@@ -80,11 +80,11 @@ public class PlaylistRepository {
 
     public void insertSongIntoPlayList(int playlistId, int songId) {
         Connection getConnection = databaseService.connect();
-        String query = "Insert into playlist values(?,?);";
+        String query = "Insert into playlist1 values(?,?);";
         try {
             PreparedStatement preparedStatement = getConnection.prepareStatement(query);
             preparedStatement.setInt(1, playlistId);
-            preparedStatement.setInt(3, songId);
+            preparedStatement.setInt(2, songId);
             int row = preparedStatement.executeUpdate();
             if (row == 1) {
                 System.out.println("Song successful added into list");

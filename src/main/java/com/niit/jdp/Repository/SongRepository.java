@@ -32,8 +32,8 @@ public class SongRepository implements Repository {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
                 String duration = resultSet.getString(3);
-                String albumName = resultSet.getString(4);
-                String artistName = resultSet.getString(5);
+                String albumName = resultSet.getString(5);
+                String artistName = resultSet.getString(4);
                 String genre = resultSet.getString(6);
                 String path = resultSet.getString(7);
                 //we are adding the object of the song list
@@ -103,9 +103,9 @@ public class SongRepository implements Repository {
     }
 
     public void displayFormat(List<Songs> songList) {
-        System.out.format("%-10s %-30s %-20s %-30s %-20s %-30s\n", "Id", "Name", "Duration", "AlbumName", "ArtistName", "Genre");
+        System.out.format("%-10s %-30s %-20s %-30s %-20s %-30s\n", "Id", "Name", "Duration","ArtistName", "AlbumName",  "Genre");
         for (Songs song : songList) {
-            System.out.format("%-10d %-30s %-20s %-30s %-20s %-30s\n", song.getSongId(), song.getSongName(), song.getDuration(), song.getAlbumName(), song.getArtistName(), song.getGenre());
+            System.out.format("%-10d %-30s %-20s %-30s %-20s %-30s\n", song.getSongId(), song.getSongName(), song.getArtistName(), song.getAlbumName(), song.getDuration(), song.getGenre());
         }
     }
 }

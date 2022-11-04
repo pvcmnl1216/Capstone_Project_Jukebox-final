@@ -39,8 +39,8 @@ public class ExistingUser {
 
                 while (resultSet.next() && found == 1) {
                     try {
-                        String s1 = resultSet.getString(2);
-                        String s2 = resultSet.getString(3);
+                        String s1 = resultSet.getString(1);
+                        String s2 = resultSet.getString(2);
 
                         if (s1.equalsIgnoreCase(userName) && s2.equalsIgnoreCase(password))
                             found = 0;
@@ -58,7 +58,7 @@ public class ExistingUser {
             }
             else
             {
-                System.out.println("UserName or Password invalid");
+//                System.out.println("UserName or Password invalid");
             }
         }
     }
