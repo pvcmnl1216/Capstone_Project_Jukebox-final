@@ -5,22 +5,31 @@
  */
 package com.niit.jdp.Model;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class Playlist {
     private int playlistId;
     private String playlistName;
-    private int songId;
-    private String songName;
 
-    public Playlist() {
+    private Set<Songs> song;
+
+    //create a no args and a parameterised constructor
+    public Playlist(int playlistId, String playlistName, List<Songs> songs) {
+        song = new TreeSet<>();
     }
 
-    public Playlist(int playlistId, String playlistName, int songId, String songName) {
-        this.playlistId = playlistId;
+    public Playlist(String playlistName, Set<Songs> song) {
         this.playlistName = playlistName;
-        this.songId = songId;
-        this.songName = songName;
+        this.song = song;
     }
 
+    public Playlist(String playList, int count) {
+    }
+
+    //create getter and setter methods for the fields
     public int getPlaylistId() {
         return playlistId;
     }
@@ -37,24 +46,31 @@ public class Playlist {
         this.playlistName = playlistName;
     }
 
-    public int getSongId() {
-        return songId;
+    public Set<Songs> getSong() {
+        return song;
     }
 
-    public void setSongId(int songId) {
-        this.songId = songId;
+    public void setSong(Set<Songs> song) {
+        this.song = song;
     }
 
-    public String getSongName() {
-        return songName;
-    }
-
-    public void setSongName(String songName) {
-        this.songName = songName;
+    //override the equals and hashcode methods
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Playlist that = (Playlist) o;
+        return playlistId == that.playlistId && Objects.equals(playlistName, that.playlistName);
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(playlistId, playlistName);
+    }
+
+    //override the toString method
+    @Override
     public String toString() {
-        return "Playlist ID : " + getPlaylistId() + ", Playlist Name : " + getPlaylistName() + ", Song ID : " + getSongId() + ", Song Name : " + getSongName();
+        return "PlaylistModel{" + "playlistId=" + playlistId + ", playlistName='" + playlistName + '\'' + '}';
     }
 }

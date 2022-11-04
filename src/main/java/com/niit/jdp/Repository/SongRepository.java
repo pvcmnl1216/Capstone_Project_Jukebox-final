@@ -1,73 +1,111 @@
-/*
- * Author Name: Philip Meshach
- * Date: 03-11-2022
- * Praise The Lord
- */
 package com.niit.jdp.Repository;
 
 import com.niit.jdp.Model.Songs;
+import com.niit.jdp.Repository.Repository;
+import com.niit.jdp.Service.DatabaseService;
 
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongRepository implements Repository<Songs>{
-    @Override
-    public List<Songs> getAll(Connection connection) throws SQLException {
-        String readQuery = "SELECT * FROM `jukebox`.`song`;";
-        List<Songs> songsList = new ArrayList<>();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet songsResultSet = statement.executeQuery(readQuery);
-            while (songsResultSet.next()) {
-                int songId = songsResultSet.getInt("song_id");
-                String songName = songsResultSet.getString("song_name");
-                String artistName = songsResultSet.getString("artist_name");
-                String genre = songsResultSet.getString("genre");
-                String duration = songsResultSet.getString("duration");
-                String songPath = songsResultSet.getString("Song path");
-                System.out.format("%s     %n%s     %n%s     %n%s%n", "Song ID :" + songsResultSet.getInt(1) + " ", "Song Name :" + songsResultSet.getString(2) + " ", "Artist Name :" + songsResultSet.getString(3) + " ", "Genre :" + songsResultSet.getString(4));
-                System.out.println();
-                Songs songs = new Songs(songId, songName, artistName, genre, duration, songPath);
-                songsList.add(songs);
+public class SongRepository implements Repository {
+    // Creating Database Service object for calling connect method
+    DatabaseService databaseService = new DatabaseService();
+
+
+    public List<Songs> displayAllSong() {
+
+        //creating object of genericList
+        List<Songs> songList = new ArrayList<>();
+        Connection connection = databaseService.connect();
+        String sqlQuery = "SELECT * FROM `jukebox`.`songs`;";
+        try {
+            //PreparedStatement interface
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            //using next method for control the loop
+            while (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                String duration = resultSet.getString(3);
+                String albumName = resultSet.getString(4);
+                String artistName = resultSet.getString(5);
+                String genre = resultSet.getString(6);
+                String path = resultSet.getString(7);
+                //we are adding the object of the song list
+                songList.add(new Songs(id, name, duration, artistName,albumName, genre, path));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return songList;
+    }
+
+    public List<Songs> sortSongs(List<Songs> songList) {
+        songList.sort((o1, o2) -> o1.getGenre().compareTo(o2.getGenre()));
+        return songList;
+    }
+
+    // search song by name
+
+
+    public List<Songs> songSearchBySongName(List<Songs> songList, String name) {
+        Connection connection = databaseService.connect();
+        List<Songs> songList1 = new ArrayList<>();
+        for (Songs song : songList) {
+            if (song.getSongName().equalsIgnoreCase(name)) {
+                songList1.add(song);
             }
         }
-        return songsList;
+        return songList1;
     }
 
-    @Override
-    public Songs getById(Connection connection, int id) throws SQLException {
-        String searchQuery = "SELECT * FROM `jukebox`.`song` WHERE(`song_id` = ?);";
-        Songs songs = new Songs();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(searchQuery)) {
-            preparedStatement.setInt(1, id);
-            ResultSet songsResultSet = preparedStatement.executeQuery();
-            while (songsResultSet.next()) {
-                int songId = songsResultSet.getInt("song_id");
-                String songName = songsResultSet.getString("song_name");
-                String artistName = songsResultSet.getString("artist_name");
-                String genre = songsResultSet.getString("genre");
-                String duration = songsResultSet.getString("duration");
-                String songPath = songsResultSet.getString("Song path");
-                songs = new Songs(songId, songName, artistName, genre, duration, songPath);
-                if (songId == 0) {
-                    throw new SongNotFoundException("The song is not in the list!! Try Valid choice.");
-                }
+    //search song by albumName
+
+    public List<Songs> songSearchByAlbumName(List<Songs> songList, String albumName) {
+        Connection connection = databaseService.connect();
+        List<Songs> songList1 = new ArrayList<>();
+        for (Songs song : songList) {
+            if (song.getAlbumName().equalsIgnoreCase(albumName)) {
+                songList1.add(song);
             }
-        } catch (SongNotFoundException e) {
-            throw new RuntimeException(e);
         }
-        return songs;
+        return songList1;
     }
 
-    @Override
-    public boolean deleteById(Connection connection, int id) throws SQLException {
-        String deleteQuery = "DELETE FROM `jukebox`.`song` WHERE (`song_id` = ?);";
-        int numberOfRowsAffected;
-        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
-            preparedStatement.setInt(1, id);
-            numberOfRowsAffected = preparedStatement.executeUpdate();
+
+    public List<Songs> songSearchByArtistName(List<Songs> songList, String artistName) {
+        Connection connection = databaseService.connect();
+        List<Songs> songList1 = new ArrayList<>();
+        for (Songs song : songList) {
+            if (song.getArtistName().equals(artistName)) {
+                songList1.add(song);
+            }
         }
-        return numberOfRowsAffected > 0;
+        return songList1;
     }
 
+    public List<Songs> songSearchByGenre(List<Songs> songList, String genre) {
+        Connection connection = databaseService.connect();
+        List<Songs> songList1 = new ArrayList<>();
+        for (Songs song : songList) {
+            if (song.getGenre().equals(genre)) {
+                songList1.add(song);
+            }
+        }
+        return songList1;
+    }
+
+    public void displayFormat(List<Songs> songList) {
+        System.out.format("%-10s %-30s %-20s %-30s %-20s %-30s\n", "Id", "Name", "Duration", "AlbumName", "ArtistName", "Genre");
+        for (Songs song : songList) {
+            System.out.format("%-10d %-30s %-20s %-30s %-20s %-30s\n", song.getSongId(), song.getSongName(), song.getDuration(), song.getAlbumName(), song.getArtistName(), song.getGenre());
+        }
+    }
 }
