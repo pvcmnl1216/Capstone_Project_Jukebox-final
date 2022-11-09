@@ -12,10 +12,6 @@ public interface Repository {
 
     List<Songs> songSearchBySongName(List<Songs> songList, String name);
 
-    List<Songs> songSearchByAlbumName(List<Songs> songList, String albumName);
-
-    List<Songs> songSearchByArtistName(List<Songs> songList, String artistName);
-
     List<Songs> songSearchByGenre(List<Songs> songList, String genre);
 
 }

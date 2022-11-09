@@ -1,6 +1,5 @@
 package com.niit.jdp;
 
-import com.niit.jdp.Model.ExistingUser;
 import com.niit.jdp.Model.Playlist;
 import com.niit.jdp.Model.Songs;
 import com.niit.jdp.Model.UserDetails;
@@ -10,7 +9,6 @@ import com.niit.jdp.Repository.SongNotFoundException;
 import com.niit.jdp.Repository.SongRepository;
 import com.niit.jdp.Service.DatabaseService;
 import com.niit.jdp.Service.MusicPlayerService;
-import com.niit.jdp.Service.SongsService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -33,6 +31,7 @@ public class Main {
         MusicPlayerService musicPlayerService = new MusicPlayerService();
         //display method return value store this object
         List<Songs> displayAllSong = songRepository.displayAllSong();
+
         System.out.println("Welcome to the Jukebox");
         System.out.println();
         songRepository.displayFormat(displayAllSong);
@@ -55,9 +54,7 @@ public class Main {
             switch (task) {
                 case 1:
                     System.out.println("Press 1 to Search song details-by Genre");
-                    System.out.println("Press 2 to Search song detail-by Album");
-                    System.out.println("Press 3 to Search song detail by-Artist Name");
-                    System.out.println("Press 4 to Search song detail by-Song Name");
+                    System.out.println("Press 2 to Search song detail by-Song Name");
                     int choice = scanner.nextInt();
                     System.out.println("------------------------------------------------------------------------");
                     if (choice == 1) {
@@ -76,38 +73,8 @@ public class Main {
                         } else {
                             break;
                         }
+
                     } else if (choice == 2) {
-                        System.out.println("Enter Album name ::");
-                        String album = scanner.next();
-                        List<Songs> getAlbum = songRepository.songSearchByAlbumName(displayAllSong, album);
-                        songRepository.displayFormat(getAlbum);
-                        System.out.println("If you want to play song then press (Y/N)");
-                        String option = scanner.next();
-                        if (option.equals("Y")) {
-                            System.out.println("please enter the song id which you want play");
-                            int id = scanner.nextInt();
-                            musicPlayerService.playParticular(id);
-                            System.out.println();
-                        } else {
-                            break;
-                        }
-                    } else if (choice == 3) {
-                        System.out.println("Enter Artist Name ::");
-                        String artistName = scanner.next();
-                        scanner.nextLine();
-                        List<Songs> getArtist = songRepository.songSearchByArtistName(displayAllSong, artistName);
-                        songRepository.displayFormat(getArtist);
-                        System.out.println("If you want to play song then press (Y/N)");
-                        String option = scanner.next();
-                        if (option.equals("Y")) {
-                            System.out.println("please enter the song id which you want play");
-                            int id = scanner.nextInt();
-                            musicPlayerService.playParticular(id);
-                            System.out.println();
-                        } else {
-                            break;
-                        }
-                    } else if (choice == 4) {
                         System.out.println("Enter Song Name ::");
                         scanner.nextLine();
                         String songName = scanner.nextLine();
@@ -144,9 +111,10 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("------------------insert song into play List------------------------------");
-                    List<Playlist> getPlaylistName1 = playListRepository.ShowPlayList();
+                    List<Playlist> getPlaylistName1 = playListRepository.showPlaylist();
+                    System.out.println("---------------------------------------------------------------------");
                     for (Playlist playList : getPlaylistName1) {
-                        System.out.println(playList.getPlaylistId() + " " + playList.getPlaylistName());
+                        System.out.println("---------------------------------------------------------------------");
                     }
                     System.out.println("Enter Play list number for choose playList which you want add song::");
                     int playListId = scanner.nextInt();
@@ -157,7 +125,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("-------------------view to play list--------------------------------------");
-                    List<Playlist> getPlayListName = playListRepository.ShowPlayList();
+                    List<Playlist> getPlayListName = playListRepository.showPlaylist();
                     for (Playlist playList : getPlayListName) {
                         System.out.println(playList.getPlaylistId() + " " + playList.getPlaylistName());
                     }
@@ -184,6 +152,7 @@ public class Main {
                     System.out.println("Sorted list");
                     List<Songs> songList = songRepository.sortSongs(displayAllSong);
                     songRepository.displayFormat(songList);
+                    break;
                 case 7:
                     System.out.println("Successful Exit");
                     System.out.println("--------------------------------------------------------------------------");

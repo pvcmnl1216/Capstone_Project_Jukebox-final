@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class SongRepository implements Repository {
@@ -48,7 +49,10 @@ public class SongRepository implements Repository {
     }
 
     public List<Songs> sortSongs(List<Songs> songList) {
-        songList.sort((o1, o2) -> o1.getGenre().compareTo(o2.getGenre()));
+        Comparator<Songs> nameComparator = (((o1, o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getGenre(), o2.getGenre())));
+        songList.sort(nameComparator);
+        for (Songs songs : songList)
+            songs.getSongName();
         return songList;
     }
 
@@ -60,31 +64,6 @@ public class SongRepository implements Repository {
         List<Songs> songList1 = new ArrayList<>();
         for (Songs song : songList) {
             if (song.getSongName().equalsIgnoreCase(name)) {
-                songList1.add(song);
-            }
-        }
-        return songList1;
-    }
-
-    //search song by albumName
-
-    public List<Songs> songSearchByAlbumName(List<Songs> songList, String albumName) {
-        Connection connection = databaseService.connect();
-        List<Songs> songList1 = new ArrayList<>();
-        for (Songs song : songList) {
-            if (song.getAlbumName().equalsIgnoreCase(albumName)) {
-                songList1.add(song);
-            }
-        }
-        return songList1;
-    }
-
-
-    public List<Songs> songSearchByArtistName(List<Songs> songList, String artistName) {
-        Connection connection = databaseService.connect();
-        List<Songs> songList1 = new ArrayList<>();
-        for (Songs song : songList) {
-            if (song.getArtistName().equals(artistName)) {
                 songList1.add(song);
             }
         }

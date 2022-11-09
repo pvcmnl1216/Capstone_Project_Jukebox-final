@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PlaylistRepository {
 
-    DatabaseService databaseService = new DatabaseService();
+    static DatabaseService databaseService = new DatabaseService();
 
 
 
@@ -32,25 +32,28 @@ public class PlaylistRepository {
     }
 
 
-    public List<Playlist> ShowPlayList() throws SQLException, PlaylistNotFoundException {
-        String playList = "";
+    public  List<Playlist> showPlaylist() throws SQLException, PlaylistNotFoundException, SongNotFoundException {
+        String playlist;
         int count = 0;
-        List<Playlist> playlistName;
-        playlistName = new ArrayList<>();
-        Connection getConnection = databaseService.connect();
-        String query = "Select * from playlist;";
-        Statement statement = getConnection.createStatement();
+        List<Playlist> playlistsName = new ArrayList<>();
+        Connection connection = databaseService.connect();
+        String query = "select * from `jukebox`.`playlist`;";
+        Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
+        System.out.println("Playlist Name" + " " + "Id");
         while (resultSet.next()) {
-            playList = resultSet.getString(1);
             count++;
-            playlistName.add(new Playlist(playList, count));
-            if (playlistName == null) {
-                throw new PlaylistNotFoundException("Playlist is empty");
-            }
+            System.out.println(resultSet.getString(1) + "         " + count);
+            System.out.println();
         }
-        return playlistName;
+        if (playlistsName.equals(null)) {
+            throw new PlaylistNotFoundException("Empty Playlist exception");
+        }
+        return playlistsName;
     }
+
+
+
 
     public List<Songs> getSongFromList(int playListId, List<Songs> songList) {
         List<Songs> getSong = new ArrayList<>();

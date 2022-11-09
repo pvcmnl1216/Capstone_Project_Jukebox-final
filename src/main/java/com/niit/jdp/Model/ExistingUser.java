@@ -58,7 +58,7 @@ public class ExistingUser {
             }
             else
             {
-//                System.out.println("UserName or Password invalid");
+                System.out.println("UserName or Password valid");
             }
         }
     }

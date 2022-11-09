@@ -13,10 +13,10 @@ public class DatabaseService {
     private static final String PASSWORD = "happy";
 
     // private field to store the reference of the connection object
-    private Connection databaseConnection;
+    private static Connection databaseConnection;
 
 
-    public Connection connect() {
+    public  Connection connect() {
         try {
             databaseConnection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {

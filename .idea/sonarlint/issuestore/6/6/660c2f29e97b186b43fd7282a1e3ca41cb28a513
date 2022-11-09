@@ -1,0 +1,12 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ó—¡øÿÿÿÿ8ÔÅËòÃ0
+k
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(«•Á&8…ËòÃ0
+a
+java:S21476"DCombine this catch with the one at line 52, which has the same body.(É®£8‹ËòÃ0
+f
+java:S21478"DCombine this catch with the one at line 52, which has the same body.(Ñ¾éÓüÿÿÿÿ8ŒËòÃ0
+a
+java:S2147:"DCombine this catch with the one at line 52, which has the same body.(ï­£Ä8ŒËòÃ0
+T	java:S106#"9Replace this use of System.out or System.err by a logger.(Šï³I8ËòÃ0
+U	java:S1060"9Replace this use of System.out or System.err by a logger.(áùÖ²8ËòÃ0

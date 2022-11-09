@@ -1,0 +1,50 @@
+create database if not exists jukebox
+create table if not exists jukebox . playlist(
+playList_Name varchar(50) not null);
+create table if not exists jukebox . playlist1(
+playList_Id int primary key auto_increment,
+ song_Id int
+);
+create table if not exists jukebox . songs(
+song_Id int primary key auto_increment,
+ song_Name varchar(50),
+ duration varchar(50),
+ artist_name varchar(50),
+ album_name varchar(50),
+ genre varchar(50),
+ song_path varchar(200)
+);
+
+insert into jukebox.playlist value('PopPlaylist8');
+insert into jukebox.playlist value('PopPlaylist9');
+insert into jukebox.playlist value('PopPlaylist10');
+
+insert into jukebox.playlist1 value(1,1);
+insert into jukebox.playlist1 value(2,2);
+insert into jukebox.playlist1 value(3,3);
+insert into jukebox.playlist1 value(4,4);
+insert into jukebox.playlist1 value(5,5);
+insert into jukebox.playlist1 value(6,6);
+insert into jukebox.playlist1 value(7,7);
+insert into jukebox.playlist1 value(8,8);
+insert into jukebox.playlist1 value(9,9);
+insert into jukebox.playlist1 value(10,10)
+
+SELECT * FROM jukebox.songs;
+insert into jukebox.songs value(1,'Believer','5.00','Beiber','album1','pop','src/main/resources/Songs/Imagine Dragons - Believer (Audio).wav');
+insert into jukebox.songs value(2,'Monkey','5.00','Toni Watson','album2','pop','src/main/resources/Songs/Tones and I - Dance Monkey.wav');
+insert into jukebox.songs value(3,'Maroon','4.50','Jason Evigan','album3','Romantic','src/main/resources/Songs/Maroon_5_-_Girls_Like_You_ft_Cardi_B_Official_Music_Video.wav');
+insert into jukebox.songs value(4,'Love','3.40','Beiber','album4','Romantic','src/main/resources/Songs/Justin Bieber - Love Yourself.wav');
+insert into jukebox.songs value(5,'Lovely','4.00','Billie Eilish','album5','Romantic','src/main/resources/Songs/01 - lovely.wav');
+insert into jukebox.songs value(6,'Memories','4.40','Adam Levine','album6','Memories','src/main/resources/Songs/Maroon 5 - Memories.wav');
+insert into jukebox.songs value(7,'Payphone','3.56','Adam Levine','album7','Memories','src/main/resources/Songs/Ed Sheeran & Justin Bieber - I Dont Care.wav');
+insert into jukebox.songs value(8,'Perfect','3.56','Ed-Sheeran','album8','Pop','src/main/resources/Songs/Ed Sheeran - Afire Love.wav');
+insert into jukebox.songs value(9,'Senorita','4.36','Camila Cabello','album9','Romantic','src/main/resources/Songs/Camila Cabello & Shawn Mendes - Señorita.wav');
+insert into jukebox.songs value(10,'Weeknd','3.00','Savin','album10','Romantic','src/main/resources/Songs/The Weeknd - Blinding Lights.wav')
+
+create table if not exists jukebox . userdetails(
+username varchar (50),
+password varchar(55),
+email varchar(70),
+mobileNo int
+);

@@ -29,6 +29,10 @@ public class Playlist {
     public Playlist(String playList, int count) {
     }
 
+    public Playlist() {
+
+    }
+
     //create getter and setter methods for the fields
     public int getPlaylistId() {
         return playlistId;

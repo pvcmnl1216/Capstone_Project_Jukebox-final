@@ -1,0 +1,28 @@
+
+P
+java:S1141:"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+f
+java:S1301O"KReplace this "switch" statement by "if" statements to increase readability.(‘ô¯ıüÿÿÿÿ
+f
+java:S1301b"KReplace this "switch" statement by "if" statements to increase readability.(‘ô¯ıüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(÷×˜ªşÿÿÿÿ
+b
+java:S20956"GUse try-with-resources or close this "Statement" in a "finally" clause.(ùÃ›ßúÿÿÿÿ
+e
+java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µÏ‰ƒ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(æ‹õµ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¥¾òğùÿÿÿÿ
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(Ùƒºÿÿÿÿÿ
+S	java:S106@"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+S	java:S106L"9Replace this use of System.out or System.err by a logger.(é»í˜ùÿÿÿÿ
+S	java:S106T"9Replace this use of System.out or System.err by a logger.( ãøæûÿÿÿÿ
+N	java:S106V"9Replace this use of System.out or System.err by a logger.(Àş ³
+N	java:S106X"9Replace this use of System.out or System.err by a logger.(Ÿ©œ
+M	java:S106d"9Replace this use of System.out or System.err by a logger.(‚ı¤
+[
+java:S2147w"ECombine this catch with the one at line 117, which has the same body.(”ı¾
+S	java:S106p"9Replace this use of System.out or System.err by a logger.(¹ìıùÿÿÿÿ
+N	java:S106q"9Replace this use of System.out or System.err by a logger.(ßŸº¬
+S	java:S106v"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+Z	java:S106x"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8Ã©’Ä0
